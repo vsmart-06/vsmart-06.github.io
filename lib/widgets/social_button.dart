@@ -7,14 +7,23 @@ class SocialButton extends StatefulWidget {
   String name;
   String link;
   String text;
-  SocialButton({key, required this.name, required this.link, required this.text}) : super(key : key);
+  SocialButton(
+      {key, required this.name, required this.link, required this.text})
+      : super(key: key);
 
   @override
   State<SocialButton> createState() => _SocialButtonState();
 }
 
 class _SocialButtonState extends State<SocialButton> {
-  List<Color> theme = [Color(0xFFF7F0F0), Color(0xFF5FE3E7), Color(0xFF0DB9BF), Color(0xFF006494), Color(0xFF003554), Color(0xFF051923)];
+  List<Color> theme = [
+    Color(0xFFF7F0F0),
+    Color(0xFF5FE3E7),
+    Color(0xFF0DB9BF),
+    Color(0xFF006494),
+    Color(0xFF003554),
+    Color(0xFF051923)
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +36,9 @@ class _SocialButtonState extends State<SocialButton> {
       onPressed: () {
         window.open(widget.link, widget.text);
       },
+      style: ButtonStyle(
+          shape: WidgetStateProperty.all(RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10))))),
     );
   }
 }

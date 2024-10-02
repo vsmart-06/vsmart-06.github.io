@@ -42,6 +42,7 @@ class _HeaderState extends State<Header> {
           children: [
             HeaderButton(name: "Home", navPath: "/", font: GoogleFonts.jost().fontFamily),
             HeaderButton(name: "Projects", navPath: "/projects", font: GoogleFonts.jost().fontFamily),
+            HeaderButton(name: "Organizations", navPath: "/organizations", font: GoogleFonts.jost().fontFamily),
             HeaderButton(name: "Achievements", navPath: "/achievements", font: GoogleFonts.jost().fontFamily),
             SocialButton(name: "linkedin.jpg", link: "https://linkedin.com/in/srivishnu-vusirikala", text: "Srivishnu LinkedIn",),
             SocialButton(name: "github.png", link: "https://github.com/vsmart-06", text: "Srivishnu GitHub",),
