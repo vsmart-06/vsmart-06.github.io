@@ -1,7 +1,6 @@
 import "package:flutter/material.dart";
 import "package:personal_website/widgets/footer.dart";
 import "package:personal_website/widgets/header.dart";
-import "package:google_fonts/google_fonts.dart";
 import "package:personal_website/widgets/achievement.dart";
 
 class Achievements extends StatefulWidget {
@@ -12,9 +11,6 @@ class Achievements extends StatefulWidget {
 }
 
 class _AchievementsState extends State<Achievements> {
-  String? fontMain = GoogleFonts.montserrat().fontFamily;
-  String? fontTitle = GoogleFonts.merriweather().fontFamily;
-  String? fontQuote = GoogleFonts.greatVibes().fontFamily;
   List<Color> theme = [
     Color(0xFFF7F0F0),
     Color(0xFF5FE3E7),
