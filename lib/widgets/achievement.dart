@@ -3,17 +3,17 @@
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
 
-class Achievement extends StatefulWidget {
+class ItemCard extends StatefulWidget {
   String heading;
   String subHeading;
-  Achievement({key, required this.heading, required this.subHeading})
+  ItemCard({key, required this.heading, required this.subHeading})
       : super(key: key);
 
   @override
-  State<Achievement> createState() => _AchievementState();
+  State<ItemCard> createState() => _ItemCardState();
 }
 
-class _AchievementState extends State<Achievement>
+class _ItemCardState extends State<ItemCard>
     with SingleTickerProviderStateMixin {
   List<Color> theme = [
     Color(0xFFF7F0F0),

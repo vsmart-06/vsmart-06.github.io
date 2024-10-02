@@ -31,43 +31,45 @@ class _AchievementsState extends State<Achievements> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Achievement(
+              ItemCard(
                   heading: "Intuit Scholarship Program Winner",
                   subHeading:
                       "Academic scholarship awarded to top 10% applicants globally.\nReceived \$10000/yr for 4 years."),
-              Achievement(
+              ItemCard(
                 heading: "Greenwood High Merit Scholarship",
                 subHeading:
                     "Awarded \$5000 for achieving 9/9 A*s in the 10th grade IGCSE board exams.",
               ),
-              Achievement(
+              ItemCard(
                   heading: "National Merit Scholarship Finalist",
                   subHeading:
                       "Top 15000 out of 1.5M PSAT/NMSQT candidates globally."),
             ],
           ),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Achievement(
-              heading: "American Invitational Mathematics Examination (AIME) Qualifier",
+            ItemCard(
+              heading:
+                  "American Invitational Mathematics Examination (AIME) Qualifier",
               subHeading:
                   "Qualified for the AIME due to superior performance in the American Mathematics Competition (AMC) (top 5% globally).",
             ),
-            Achievement(
-                heading: "Indian National Olympiad in Informatics (INOI) Qualifier",
+            ItemCard(
+                heading:
+                    "Indian National Olympiad in Informatics (INOI) Qualifier",
                 subHeading:
                     "Qualified for the INOI by achieving the required cutoff marks in the Zonal Computing Olympiad (ZCO) (top 25%)."),
-            Achievement(
+            ItemCard(
                 heading: "Indian Olympiad Qualifier in Mathematics (IOQM)",
                 subHeading:
                     "Awarded a merit certificate for achieving the required cutoff score."),
           ]),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Achievement(
+            ItemCard(
               heading: "7th Karnataka State School Chess Team Championship",
               subHeading:
                   "Captained the school team to 3rd place in the U-18 category.",
             ),
-            Achievement(
+            ItemCard(
               heading: "Wissen School Quiz Competition 2023",
               subHeading:
                   "Placed in the top 5 out of 350+ school teams from across India.",
