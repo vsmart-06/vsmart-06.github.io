@@ -4,11 +4,11 @@ import "package:flutter/material.dart";
 import "dart:html";
 
 class SocialButton extends StatefulWidget {
-  String name;
+  String image;
   String link;
   String text;
   SocialButton(
-      {key, required this.name, required this.link, required this.text})
+      {key, required this.image, required this.link, required this.text})
       : super(key: key);
 
   @override
@@ -28,11 +28,20 @@ class _SocialButtonState extends State<SocialButton> {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      child: Image(
-        image: AssetImage(widget.name),
-        width: 30,
-        height: 30,
-      ),
+      child: (widget.link != "https://github.com/vsmart-06")
+          ? Image(
+              image: NetworkImage(widget.image),
+              width: 30,
+              height: 30,
+            )
+          : Container(
+              color: Colors.black,
+              child: Image(
+                image: NetworkImage(widget.image),
+                width: 30,
+                height: 30,
+              ),
+            ),
       onPressed: () {
         window.open(widget.link, widget.text);
       },

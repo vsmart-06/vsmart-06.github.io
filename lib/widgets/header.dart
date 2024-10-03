@@ -59,17 +59,17 @@ class _HeaderState extends State<Header> {
                 navPath: "/achievements",
                 font: GoogleFonts.jost().fontFamily),
             SocialButton(
-              name: "linkedin.jpg",
+              image: "https://i.imgur.com/ic880uA.jpeg",
               link: "https://linkedin.com/in/srivishnu-vusirikala",
               text: "Srivishnu LinkedIn",
             ),
             SocialButton(
-              name: "github.png",
+              image: "https://i.imgur.com/pRJ3vYG.png",
               link: "https://github.com/vsmart-06",
               text: "Srivishnu GitHub",
             ),
             SocialButton(
-              name: "medium.png",
+              image: "https://i.imgur.com/yl0VdWG.png",
               link: "https://medium.com/@srivishnuvusirikala",
               text: "Srivishnu Medium",
             )

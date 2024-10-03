@@ -13,24 +13,50 @@ class ProjectPage extends StatelessWidget {
   String text;
   String link;
   String dates;
+  List<String> images;
+  List<Color> theme = [
+    Color(0xFFF7F0F0),
+    Color(0xFF5FE3E7),
+    Color(0xFF0DB9BF),
+    Color(0xFF006494),
+    Color(0xFF003554),
+    Color(0xFF051923)
+  ];
   ProjectPage(
       {super.key,
       required this.title,
       required this.text,
       required this.link,
-      required this.dates});
+      required this.dates,
+      required this.images});
+
+  List<Widget> generateImages(Size size, bool landscape) {
+    List<Widget> image_widgets = [];
+    for (String image in images) {
+      image_widgets.add(Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Card(
+          color: theme[3],
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              child: Image(
+                image: NetworkImage(image),
+                height: landscape ? size.height * 0.3 : size.width * 0.8,
+                width: landscape ? size.height * 0.3 : size.width * 0.8,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+      ));
+    }
+    return image_widgets;
+  }
 
   @override
   Widget build(BuildContext context) {
-    List<Color> theme = [
-      Color(0xFFF7F0F0),
-      Color(0xFF5FE3E7),
-      Color(0xFF0DB9BF),
-      Color(0xFF006494),
-      Color(0xFF003554),
-      Color(0xFF051923)
-    ];
-
     if (MediaQuery.of(context).orientation == Orientation.landscape) {
       return Scaffold(
           body: Container(
@@ -96,6 +122,17 @@ class ProjectPage extends StatelessWidget {
                       ),
                     ),
                   ],
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children:
+                          generateImages(MediaQuery.of(context).size, true),
+                    ),
+                  ),
                 ),
                 Footer()
               ]),
@@ -171,6 +208,10 @@ class ProjectPage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  Column(
+                    children:
+                        generateImages(MediaQuery.of(context).size, false),
+                  )
                 ]),
               ),
             ),

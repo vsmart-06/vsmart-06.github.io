@@ -137,7 +137,8 @@ class _HomeState extends State<Home> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                           child: Image(
-                            image: AssetImage("me.jpg"),
+                            image: NetworkImage(
+                                "https://i.imgur.com/nZuxMBB.jpeg"),
                             width: MediaQuery.of(context).size.width * 0.25,
                           ),
                         ),
@@ -238,7 +239,8 @@ class _HomeState extends State<Home> {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10)),
                                 child: Image(
-                                  image: AssetImage("me.jpg"),
+                                  image: NetworkImage(
+                                      "https://i.imgur.com/nZuxMBB.jpeg"), //NetworkImage("https://i.imgur.com/nZuxMBB.jpeg"),
                                   width:
                                       MediaQuery.of(context).size.width * 0.5,
                                 ),

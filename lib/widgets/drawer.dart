@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
+import "package:personal_website/widgets/social_button.dart";
 
 class SideBar extends StatelessWidget {
   const SideBar({super.key});
@@ -38,7 +39,7 @@ class SideBar extends StatelessWidget {
                   color: theme[0], fontFamily: font, fontSize: fontSize),
             ),
             onTap: () {
-              Navigator.pushNamed(context, "/");
+              Navigator.popAndPushNamed(context, "/");
             },
           ),
           ListTile(
@@ -48,7 +49,7 @@ class SideBar extends StatelessWidget {
                   color: theme[0], fontFamily: font, fontSize: fontSize),
             ),
             onTap: () {
-              Navigator.pushNamed(context, "/projects");
+              Navigator.popAndPushNamed(context, "/projects");
             },
           ),
           ListTile(
@@ -58,7 +59,7 @@ class SideBar extends StatelessWidget {
                   color: theme[0], fontFamily: font, fontSize: fontSize),
             ),
             onTap: () {
-              Navigator.pushNamed(context, "/organizations");
+              Navigator.popAndPushNamed(context, "/organizations");
             },
           ),
           ListTile(
@@ -68,9 +69,31 @@ class SideBar extends StatelessWidget {
                   color: theme[0], fontFamily: font, fontSize: fontSize),
             ),
             onTap: () {
-              Navigator.pushNamed(context, "/achievements");
+              Navigator.popAndPushNamed(context, "/achievements");
             },
           ),
+          Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: Row(
+              children: [
+                SocialButton(
+                  image: "https://i.imgur.com/ic880uA.jpeg",
+                  link: "https://linkedin.com/in/srivishnu-vusirikala",
+                  text: "Srivishnu LinkedIn",
+                ),
+                SocialButton(
+                  image: "https://i.imgur.com/pRJ3vYG.png",
+                  link: "https://github.com/vsmart-06",
+                  text: "Srivishnu GitHub",
+                ),
+                SocialButton(
+                  image: "https://i.imgur.com/yl0VdWG.png",
+                  link: "https://medium.com/@srivishnuvusirikala",
+                  text: "Srivishnu Medium",
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
