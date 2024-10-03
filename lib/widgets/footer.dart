@@ -16,17 +16,16 @@ class Footer extends StatelessWidget {
     ];
 
     return Container(
-      color: theme[4],
-      width: MediaQuery.of(context).size.width,
-      child: Text(
-        "What's life without a few laughs?",
-        style: TextStyle(
-          fontSize: 30,
-          color: theme[0],
-          fontFamily: GoogleFonts.greatVibes().fontFamily,
-        ),
-        textAlign: TextAlign.center,
-      )
-    );
+        color: theme[4],
+        width: MediaQuery.of(context).size.width,
+        child: Text(
+          "What's life without a few laughs?",
+          style: TextStyle(
+            fontSize: 30,
+            color: theme[0],
+            fontFamily: GoogleFonts.greatVibes().fontFamily,
+          ),
+          textAlign: TextAlign.center,
+        ));
   }
 }

@@ -7,7 +7,11 @@ class Project extends StatefulWidget {
   String name;
   String navPath;
   String subtitle;
-  Project({super.key, required this.name, required this.subtitle, required this.navPath});
+  Project(
+      {super.key,
+      required this.name,
+      required this.subtitle,
+      required this.navPath});
 
   @override
   State<Project> createState() => _ProjectState();
@@ -47,11 +51,10 @@ class _ProjectState extends State<Project> {
               child: Text(
                 widget.subtitle,
                 style: TextStyle(
-                  color: theme[2],
-                  fontFamily: GoogleFonts.jost().fontFamily,
-                  fontSize: 20,
-                  fontStyle: FontStyle.italic
-                ),
+                    color: theme[2],
+                    fontFamily: GoogleFonts.jost().fontFamily,
+                    fontSize: 20,
+                    fontStyle: FontStyle.italic),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -66,7 +69,12 @@ class _ProjectState extends State<Project> {
           });
         },
         style: ButtonStyle(
-          fixedSize: WidgetStateProperty.all(Size(MediaQuery.of(context).size.width * 0.25, MediaQuery.of(context).size.height * 0.4)),
+          fixedSize: WidgetStateProperty.all(Size(
+              MediaQuery.of(context).size.width *
+                  (MediaQuery.of(context).orientation == Orientation.landscape
+                      ? 0.25
+                      : 0.75),
+              MediaQuery.of(context).size.height * 0.4)),
           backgroundColor: WidgetStateProperty.all(color),
           shape: WidgetStateProperty.all(RoundedRectangleBorder(
               side: BorderSide(color: theme[0]),

@@ -34,19 +34,45 @@ class _HeaderState extends State<Header> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Padding(
-          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-          child: HeaderButton(name: "Srivishnu\nVusirikala", navPath: "/", font: GoogleFonts.alexBrush().fontFamily)
-        ),
+            padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+            child: HeaderButton(
+                name: "Srivishnu\nVusirikala",
+                navPath: "/",
+                font: GoogleFonts.alexBrush().fontFamily)),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            HeaderButton(name: "Home", navPath: "/", font: GoogleFonts.jost().fontFamily),
-            HeaderButton(name: "Projects", navPath: "/projects", font: GoogleFonts.jost().fontFamily),
-            HeaderButton(name: "Organizations", navPath: "/organizations", font: GoogleFonts.jost().fontFamily),
-            HeaderButton(name: "Achievements", navPath: "/achievements", font: GoogleFonts.jost().fontFamily),
-            SocialButton(name: "linkedin.jpg", link: "https://linkedin.com/in/srivishnu-vusirikala", text: "Srivishnu LinkedIn",),
-            SocialButton(name: "github.png", link: "https://github.com/vsmart-06", text: "Srivishnu GitHub",),
-            SocialButton(name: "medium.png", link: "https://medium.com/@srivishnuvusirikala", text: "Srivishnu Medium",)
+            HeaderButton(
+                name: "Home",
+                navPath: "/",
+                font: GoogleFonts.jost().fontFamily),
+            HeaderButton(
+                name: "Projects",
+                navPath: "/projects",
+                font: GoogleFonts.jost().fontFamily),
+            HeaderButton(
+                name: "Organizations",
+                navPath: "/organizations",
+                font: GoogleFonts.jost().fontFamily),
+            HeaderButton(
+                name: "Achievements",
+                navPath: "/achievements",
+                font: GoogleFonts.jost().fontFamily),
+            SocialButton(
+              name: "linkedin.jpg",
+              link: "https://linkedin.com/in/srivishnu-vusirikala",
+              text: "Srivishnu LinkedIn",
+            ),
+            SocialButton(
+              name: "github.png",
+              link: "https://github.com/vsmart-06",
+              text: "Srivishnu GitHub",
+            ),
+            SocialButton(
+              name: "medium.png",
+              link: "https://medium.com/@srivishnuvusirikala",
+              text: "Srivishnu Medium",
+            )
           ],
         ),
       ],
