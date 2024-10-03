@@ -39,7 +39,7 @@ class SideBar extends StatelessWidget {
                   color: theme[0], fontFamily: font, fontSize: fontSize),
             ),
             onTap: () {
-              Navigator.popAndPushNamed(context, "/");
+              Navigator.pushNamed(context, "/");
             },
           ),
           ListTile(
@@ -49,7 +49,7 @@ class SideBar extends StatelessWidget {
                   color: theme[0], fontFamily: font, fontSize: fontSize),
             ),
             onTap: () {
-              Navigator.popAndPushNamed(context, "/projects");
+              Navigator.pushNamed(context, "/projects");
             },
           ),
           ListTile(
@@ -59,7 +59,7 @@ class SideBar extends StatelessWidget {
                   color: theme[0], fontFamily: font, fontSize: fontSize),
             ),
             onTap: () {
-              Navigator.popAndPushNamed(context, "/organizations");
+              Navigator.pushNamed(context, "/organizations");
             },
           ),
           ListTile(
@@ -69,7 +69,7 @@ class SideBar extends StatelessWidget {
                   color: theme[0], fontFamily: font, fontSize: fontSize),
             ),
             onTap: () {
-              Navigator.popAndPushNamed(context, "/achievements");
+              Navigator.pushNamed(context, "/achievements");
             },
           ),
           Padding(

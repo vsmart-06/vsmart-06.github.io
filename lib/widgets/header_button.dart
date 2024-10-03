@@ -35,7 +35,7 @@ class _HeaderButtonState extends State<HeaderButton> {
               TextStyle(fontFamily: widget.font, color: theme[0], fontSize: 23),
         ),
         onPressed: () {
-          Navigator.popAndPushNamed(context, widget.navPath);
+          Navigator.pushNamed(context, widget.navPath);
         },
         style: ButtonStyle(
             shape: WidgetStateProperty.all(RoundedRectangleBorder(

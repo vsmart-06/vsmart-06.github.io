@@ -61,7 +61,7 @@ class _ProjectState extends State<Project> {
           ],
         ),
         onPressed: () {
-          Navigator.popAndPushNamed(context, widget.navPath);
+          Navigator.pushNamed(context, widget.navPath);
         },
         onHover: (hover) {
           setState(() {
