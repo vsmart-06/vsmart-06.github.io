@@ -38,57 +38,60 @@ class ProjectPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Header(),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Text(
-                  title,
-                  style: TextStyle(
-                      color: theme[1],
-                      fontFamily: GoogleFonts.jost().fontFamily,
-                      fontSize: 40),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                child: Text(
-                  dates,
-                  style: TextStyle(
-                      color: theme[2],
-                      fontFamily: GoogleFonts.jost().fontFamily,
-                      fontSize: 30),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: TextButton(
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(20),
                     child: Text(
-                      link,
+                      title,
                       style: TextStyle(
-                          color: theme[3],
-                          fontFamily: GoogleFonts.montserrat().fontFamily,
+                          color: theme[1],
+                          fontFamily: GoogleFonts.jost().fontFamily,
+                          fontSize: 40),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                    child: Text(
+                      dates,
+                      style: TextStyle(
+                          color: theme[2],
+                          fontFamily: GoogleFonts.jost().fontFamily,
                           fontSize: 30),
                       textAlign: TextAlign.center,
                     ),
-                    onPressed: () {
-                      window.open(link, title);
-                    },
-                    style: ButtonStyle(
-                        shape: WidgetStateProperty.all(RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10)))))),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  text,
-                  style: TextStyle(
-                      color: theme[0],
-                      fontFamily: GoogleFonts.jost().fontFamily,
-                      fontSize: 25),
-                ),
-              ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: TextButton(
+                        child: Text(
+                          link,
+                          style: TextStyle(
+                              color: theme[3],
+                              fontFamily: GoogleFonts.montserrat().fontFamily,
+                              fontSize: 30),
+                          textAlign: TextAlign.center,
+                        ),
+                        onPressed: () {
+                          window.open(link, title);
+                        },
+                        style: ButtonStyle(
+                            shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10)))))),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Text(
+                      text,
+                      style: TextStyle(
+                          color: theme[0],
+                          fontFamily: GoogleFonts.jost().fontFamily,
+                          fontSize: 25),
+                    ),
+                  ),
+              ],),
               Footer()
             ]),
       ),

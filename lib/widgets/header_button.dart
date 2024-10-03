@@ -26,18 +26,21 @@ class _HeaderButtonState extends State<HeaderButton> {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      child: Text(
-        widget.name,
-        style:
-            TextStyle(fontFamily: widget.font, color: theme[0], fontSize: 23),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+      child: TextButton(
+        child: Text(
+          widget.name,
+          style:
+              TextStyle(fontFamily: widget.font, color: theme[0], fontSize: 23),
+        ),
+        onPressed: () {
+          Navigator.pushNamed(context, widget.navPath);
+        },
+        style: ButtonStyle(
+            shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10))))),
       ),
-      onPressed: () {
-        Navigator.pushNamed(context, widget.navPath);
-      },
-      style: ButtonStyle(
-          shape: WidgetStateProperty.all(RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10))))),
     );
   }
 }

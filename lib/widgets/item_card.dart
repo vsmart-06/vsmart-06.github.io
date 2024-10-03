@@ -6,7 +6,9 @@ import "package:google_fonts/google_fonts.dart";
 class ItemCard extends StatefulWidget {
   String heading;
   String subHeading;
-  ItemCard({key, required this.heading, required this.subHeading})
+  String? organization;
+  ItemCard(
+      {key, required this.heading, required this.subHeading, this.organization})
       : super(key: key);
 
   @override
@@ -56,7 +58,9 @@ class _ItemCardState extends State<ItemCard>
           20, padAnimation[0].value, 20, padAnimation[1].value),
       child: SizedBox(
         width: MediaQuery.of(context).size.width * 0.25,
-        height: MediaQuery.of(context).size.height * 0.6,
+        height: widget.organization == null
+            ? MediaQuery.of(context).size.height * 0.6
+            : MediaQuery.of(context).size.height * 0.7,
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Card(
@@ -84,8 +88,23 @@ class _ItemCardState extends State<ItemCard>
                       ),
                       textAlign: TextAlign.center,
                     ),
+                    widget.organization != null
+                        ? Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Text(
+                              widget.organization!,
+                              style: TextStyle(
+                                fontSize: 25,
+                                color: theme[3],
+                                fontStyle: FontStyle.italic,
+                                fontFamily: font,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          )
+                        : Container(),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                      padding: const EdgeInsets.only(top: 10),
                       child: Text(
                         widget.subHeading,
                         style: TextStyle(
@@ -93,7 +112,9 @@ class _ItemCardState extends State<ItemCard>
                             color: theme[2],
                             fontStyle: FontStyle.italic,
                             fontFamily: font),
-                        textAlign: TextAlign.center,
+                        textAlign: widget.organization == null
+                            ? TextAlign.center
+                            : TextAlign.left,
                       ),
                     ),
                   ],

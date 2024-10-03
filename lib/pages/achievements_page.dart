@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 import "package:personal_website/widgets/footer.dart";
 import "package:personal_website/widgets/header.dart";
-import "package:personal_website/widgets/achievement.dart";
+import "package:personal_website/widgets/item_card.dart";
 
 class Achievements extends StatefulWidget {
   const Achievements({super.key});
