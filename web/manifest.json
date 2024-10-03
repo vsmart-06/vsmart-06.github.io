@@ -1,11 +1,11 @@
 {
-    "name": "personal_website",
-    "short_name": "personal_website",
+    "name": "Srivishnu Vusirikala's Website",
+    "short_name": "Srivishnu Vusirikala's Website",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#051923",
+    "theme_color": "#051923",
+    "description": "Srivishnu Vusirikala's Website",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
