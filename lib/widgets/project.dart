@@ -74,7 +74,9 @@ class _ProjectState extends State<Project> {
                   (MediaQuery.of(context).orientation == Orientation.landscape
                       ? 0.25
                       : 0.75),
-              MediaQuery.of(context).size.height * 0.4)),
+              MediaQuery.of(context).size.height * (MediaQuery.of(context).orientation == Orientation.landscape
+                      ? 0.4
+                      : 0.5))),
           backgroundColor: WidgetStateProperty.all(color),
           shape: WidgetStateProperty.all(RoundedRectangleBorder(
               side: BorderSide(color: theme[0]),

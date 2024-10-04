@@ -63,10 +63,8 @@ class _ItemCardState extends State<ItemCard>
                 ? 0.25
                 : 0.75),
         height: widget.organization == null
-            ? (MediaQuery.of(context).orientation == Orientation.landscape
-                ? MediaQuery.of(context).size.height * 0.6
-                : MediaQuery.of(context).size.height * 0.5)
-            : MediaQuery.of(context).size.height * 0.7,
+            ? MediaQuery.of(context).size.height * (MediaQuery.of(context).orientation == Orientation.landscape ? 0.6 : 0.8)
+            : MediaQuery.of(context).size.height * (MediaQuery.of(context).orientation == Orientation.landscape ? 0.7 : 0.9),
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Card(
