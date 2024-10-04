@@ -57,80 +57,112 @@ class _ItemCardState extends State<ItemCard>
     return Padding(
       padding: EdgeInsets.fromLTRB(
           20, padAnimation[0].value, 20, padAnimation[1].value),
-      child: SizedBox(
-        width: MediaQuery.of(context).size.width *
-            (MediaQuery.of(context).orientation == Orientation.landscape
-                ? 0.25
-                : 0.75),
-        height: widget.organization == null
-            ? MediaQuery.of(context).size.height * (MediaQuery.of(context).orientation == Orientation.landscape ? 0.6 : 0.8)
-            : MediaQuery.of(context).size.height * (MediaQuery.of(context).orientation == Orientation.landscape ? 0.7 : 1),
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Card(
-            color: theme[5],
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-                side: BorderSide(color: colorAnimation.value)),
-            child: MediaQuery.of(context).orientation == Orientation.landscape
-                ? MouseRegion(
-                    onEnter: (event) => hoverAnimation(true),
-                    onHover: (event) => hoverAnimation(true),
-                    onExit: (event) => hoverAnimation(false),
-                    child: Padding(
+      child: MediaQuery.of(context).orientation == Orientation.landscape
+          ? MouseRegion(
+              onEnter: (event) => hoverAnimation(true),
+              onHover: (event) => hoverAnimation(true),
+              onExit: (event) => hoverAnimation(false),
+              child: SizedBox(
+                  width: MediaQuery.of(context).size.width *
+                      (MediaQuery.of(context).orientation ==
+                              Orientation.landscape
+                          ? 0.25
+                          : 0.75),
+                  height: widget.organization == null
+                      ? MediaQuery.of(context).size.height *
+                          (MediaQuery.of(context).orientation ==
+                                  Orientation.landscape
+                              ? 0.6
+                              : 0.8)
+                      : MediaQuery.of(context).size.height *
+                          (MediaQuery.of(context).orientation ==
+                                  Orientation.landscape
+                              ? 0.7
+                              : 1),
+                  child: Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            widget.heading,
-                            style: TextStyle(
-                              fontSize: 30,
-                              color: theme[0],
-                              fontWeight: FontWeight.bold,
-                              fontFamily: font,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          widget.organization != null
-                              ? Padding(
+                      child: Card(
+                          color: theme[5],
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              side: BorderSide(color: colorAnimation.value)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  widget.heading,
+                                  style: TextStyle(
+                                    fontSize: 30,
+                                    color: theme[0],
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: font,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                                widget.organization != null
+                                    ? Padding(
+                                        padding: const EdgeInsets.only(top: 10),
+                                        child: Text(
+                                          widget.organization!,
+                                          style: TextStyle(
+                                            fontSize: 25,
+                                            color: theme[3],
+                                            fontStyle: FontStyle.italic,
+                                            fontFamily: font,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      )
+                                    : Container(),
+                                Padding(
                                   padding: const EdgeInsets.only(top: 10),
                                   child: Text(
-                                    widget.organization!,
+                                    widget.subHeading,
                                     style: TextStyle(
-                                      fontSize: 25,
-                                      color: theme[3],
-                                      fontStyle: FontStyle.italic,
-                                      fontFamily: font,
-                                    ),
-                                    textAlign: TextAlign.center,
+                                        fontSize: 20,
+                                        color: theme[2],
+                                        fontStyle: FontStyle.italic,
+                                        fontFamily: font),
+                                    textAlign: widget.organization == null
+                                        ? TextAlign.center
+                                        : TextAlign.left,
                                   ),
-                                )
-                              : Container(),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 10),
-                            child: Text(
-                              widget.subHeading,
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  color: theme[2],
-                                  fontStyle: FontStyle.italic,
-                                  fontFamily: font),
-                              textAlign: widget.organization == null
-                                  ? TextAlign.center
-                                  : TextAlign.left,
+                                ),
+                              ],
                             ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
-                : GestureDetector(
-                    onTap: () => setState(() {
-                      press = !press;
-                      hoverAnimation(press);
-                    }),
+                          )))),
+            )
+          : GestureDetector(
+              onTap: () => setState(() {
+                press = !press;
+                hoverAnimation(press);
+              }),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width *
+                    (MediaQuery.of(context).orientation == Orientation.landscape
+                        ? 0.25
+                        : 0.75),
+                height: widget.organization == null
+                    ? MediaQuery.of(context).size.height *
+                        (MediaQuery.of(context).orientation ==
+                                Orientation.landscape
+                            ? 0.6
+                            : 0.8)
+                    : MediaQuery.of(context).size.height *
+                        (MediaQuery.of(context).orientation ==
+                                Orientation.landscape
+                            ? 0.7
+                            : 1),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Card(
+                    color: theme[5],
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        side: BorderSide(color: colorAnimation.value)),
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Column(
@@ -180,9 +212,9 @@ class _ItemCardState extends State<ItemCard>
                       ),
                     ),
                   ),
-          ),
-        ),
-      ),
+                ),
+              ),
+            ),
     );
   }
 }
