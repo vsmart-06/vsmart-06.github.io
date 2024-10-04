@@ -7,6 +7,7 @@ import "package:personal_website/widgets/project_template.dart";
 
 void main() {
   runApp(MaterialApp(
+    title: "Srivishnu Vusirikala's Website",
     routes: {
       "/": (context) => Home(),
       "/achievements": (context) => Achievements(),
