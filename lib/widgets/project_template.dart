@@ -45,9 +45,9 @@ class ProjectPage extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(10)),
               child: Image(
                 image: NetworkImage(image),
-                height: landscape ? size.height * 0.3 : size.width * 0.8,
-                width: fitWidth ? (landscape ? size.height * 0.3 : size.width * 0.8) : null,
-                fit: fitWidth ? BoxFit.cover : BoxFit.fitHeight,
+                height: landscape ? size.height * 0.3 : (fitWidth ? size.width * 0.8 : null),
+                width: landscape ? (fitWidth ? size.height * 0.3 : null) : size.width * 0.8,
+                fit: fitWidth ? BoxFit.cover : (landscape ? BoxFit.fitHeight : BoxFit.contain),
               ),
             ),
           ),

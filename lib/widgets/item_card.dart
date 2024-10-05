@@ -63,22 +63,10 @@ class _ItemCardState extends State<ItemCard>
               onHover: (event) => hoverAnimation(true),
               onExit: (event) => hoverAnimation(false),
               child: SizedBox(
-                  width: MediaQuery.of(context).size.width *
-                      (MediaQuery.of(context).orientation ==
-                              Orientation.landscape
-                          ? 0.25
-                          : 0.75),
+                  width: MediaQuery.of(context).size.width * 0.25,
                   height: widget.organization == null
-                      ? MediaQuery.of(context).size.height *
-                          (MediaQuery.of(context).orientation ==
-                                  Orientation.landscape
-                              ? 0.6
-                              : 0.8)
-                      : MediaQuery.of(context).size.height *
-                          (MediaQuery.of(context).orientation ==
-                                  Orientation.landscape
-                              ? 0.7
-                              : 1),
+                      ? MediaQuery.of(context).size.height * 0.6
+                      : MediaQuery.of(context).size.height * 0.7,
                   child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Card(
@@ -145,17 +133,6 @@ class _ItemCardState extends State<ItemCard>
                     (MediaQuery.of(context).orientation == Orientation.landscape
                         ? 0.25
                         : 0.75),
-                height: widget.organization == null
-                    ? MediaQuery.of(context).size.height *
-                        (MediaQuery.of(context).orientation ==
-                                Orientation.landscape
-                            ? 0.6
-                            : 0.8)
-                    : MediaQuery.of(context).size.height *
-                        (MediaQuery.of(context).orientation ==
-                                Orientation.landscape
-                            ? 0.7
-                            : 1),
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Card(
@@ -164,7 +141,7 @@ class _ItemCardState extends State<ItemCard>
                         borderRadius: BorderRadius.circular(10),
                         side: BorderSide(color: colorAnimation.value)),
                     child: Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
