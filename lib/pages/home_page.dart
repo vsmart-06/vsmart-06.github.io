@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
     if (MediaQuery.of(context).orientation == Orientation.landscape) {
       return Scaffold(
           body: Container(
-        height: double.infinity,
+        height: MediaQuery.of(context).size.height,
         color: theme[5],
         child: SingleChildScrollView(
           child: Column(children: [

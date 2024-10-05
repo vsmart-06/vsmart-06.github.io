@@ -30,35 +30,57 @@ class _ProjectsState extends State<Projects> {
         child: Container(
           height: MediaQuery.of(context).size.height,
           color: theme[5],
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Header(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Project(
-                      name: "Machine Learning Research on Self-Supervision",
-                      subtitle:
-                          "Researched the impact of self-supervision on improving the accuracy of neural networks training to classify melanoma patches",
-                      navPath: "/melanoma-classification",
+          child: SingleChildScrollView(
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Header(),
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Project(
+                              name:
+                                  "Machine Learning Research on Self-Supervision",
+                              subtitle:
+                                  "Researched the impact of self-supervision on improving the accuracy of neural networks training to classify melanoma patches",
+                              navPath: "/melanoma-classification",
+                            ),
+                            Project(
+                              name:
+                                  "Math Research on Solving Depressed Polynomial Equations",
+                              subtitle:
+                                  "Researched a novel approach to formulate closed solutions for special cases of depressed polynomial equations",
+                              navPath: "/solving-depressed-polynomials",
+                            ),
+                            Project(
+                              name: "Oral Cancer Detection Application",
+                              subtitle:
+                                  "Harnessed machine learning to detect oral cancer tumors",
+                              navPath: "/oral-cancer-detection",
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Project(
+                              name: "Minesweeper Bot",
+                              subtitle:
+                                  "Created a Discord bot that brought a variety of classic board games to the platform",
+                              navPath: "/minesweeper-bot",
+                            )
+                          ],
+                        ),
+                      ],
                     ),
-                    Project(
-                      name: "Oral Cancer Detection Application",
-                      subtitle:
-                          "Harnessed machine learning to detect oral cancer tumors",
-                      navPath: "/oral-cancer-detection",
-                    ),
-                    Project(
-                      name: "Minesweeper Bot",
-                      subtitle:
-                          "Created a Discord bot that brought a variety of classic board games to the platform",
-                      navPath: "/minesweeper-bot",
-                    )
-                  ],
-                ),
-                Footer()
-              ]),
+                  ),
+                  Footer()
+                ]),
+          ),
         ),
       ));
     } else {
@@ -77,6 +99,13 @@ class _ProjectsState extends State<Projects> {
                     subtitle:
                         "Researched the impact of self-supervision on improving the accuracy of neural networks training to classify melanoma patches",
                     navPath: "/melanoma-classification",
+                  ),
+                  Project(
+                    name:
+                        "Math Research on Solving Depressed Polynomial Equations",
+                    subtitle:
+                        "Researched a novel approach to formulate closed solutions for special cases of depressed polynomial equations",
+                    navPath: "/solving-depressed-polynomials",
                   ),
                   Project(
                     name: "Oral Cancer Detection Application",

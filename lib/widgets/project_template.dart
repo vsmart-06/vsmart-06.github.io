@@ -14,6 +14,7 @@ class ProjectPage extends StatelessWidget {
   String link;
   String dates;
   List<String> images;
+  bool fitWidth;
   List<Color> theme = [
     Color(0xFFF7F0F0),
     Color(0xFF5FE3E7),
@@ -28,7 +29,8 @@ class ProjectPage extends StatelessWidget {
       required this.text,
       required this.link,
       required this.dates,
-      required this.images});
+      required this.images,
+      this.fitWidth = true});
 
   List<Widget> generateImages(Size size, bool landscape) {
     List<Widget> image_widgets = [];
@@ -44,8 +46,8 @@ class ProjectPage extends StatelessWidget {
               child: Image(
                 image: NetworkImage(image),
                 height: landscape ? size.height * 0.3 : size.width * 0.8,
-                width: landscape ? size.height * 0.3 : size.width * 0.8,
-                fit: BoxFit.cover,
+                width: fitWidth ? (landscape ? size.height * 0.3 : size.width * 0.8) : null,
+                fit: fitWidth ? BoxFit.cover : BoxFit.fitHeight,
               ),
             ),
           ),
